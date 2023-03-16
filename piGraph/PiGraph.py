@@ -23,6 +23,8 @@ def makeList():
                 l.pop(0)
             #if j==1000: uncomment to stop it before
              #   break
+
+
     return liste
 
 
