@@ -21,7 +21,7 @@ def makeList():
                 liste.append((l[0],l[1]))
                 l.pop(0)
                 l.pop(0)
-            #if j==1000:
+            #if j==1000: uncomment to stop it before
              #   break
     return liste
 
