@@ -5,10 +5,13 @@ liste=[]
 
 def main():
     _input=makeList()
-    formatted=format(_input)
-    datas=[np.mean(formatted),np.std(formatted),len(formatted)]
+    Single=singleFormatting(_input)
+    #formatted=format(_input) #points made with every two ciphers of pi
+    #FuncPoints=SinF(formatted) #points with sin function apllied
+    data=mostFrequent(Single,1)
+    datas=[np.mean(data),np.std(data),len(data),mostFrequent(Single,1)[-1]]
     print(datas)
-    graphIT(formatted)
+    graphIT(data)
     return datas
 
 def makeList():
@@ -21,8 +24,8 @@ def makeList():
                 liste.append((l[0],l[1]))
                 l.pop(0)
                 l.pop(0)
-            #if j==1000: uncomment to stop it before
-             #   break
+            if j==1000000: #uncomment to stop it before
+                break
 
 
     return liste
@@ -40,12 +43,42 @@ def format(l):
 
 def graphIT(l):
     Xaxis=[]
-    Yaxis=l
+    Yaxis=[]
     for i in range(len(l)):
-        Xaxis.append(i+1)
+        Yaxis.append(l[i][1])
+        Xaxis.append(l[i][0])
         #print(i)
     plt.bar(Xaxis,Yaxis)
     plt.show()
+
+
+def SinF(l):
+    r=[]
+    for x in l:
+        r.append(np.sin(x))
+    return r
+def singleFormatting(l):
+    r=[]
+    for x in  l:
+        r.append(int(x[0]))
+        r.append(int(x[1]))
+    return r
+
+def mostFrequent(l,i):
+    res=0
+    e=[]
+    if i==1:
+        r=range(10)
+    if i==2:
+        r=range(100)
+    for x in r:
+        e.append((x,l.count(x)))
+    return list(sorted(e,key=lambda k : k[0]))
+
+
+
+
+    
 
 
 
