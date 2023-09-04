@@ -7,7 +7,7 @@ def main():
     _input=makeList()
     Single=singleFormatting(_input)
     #formatted=format(_input) #points made with every two ciphers of pi
-    #FuncPoints=SinF(formatted) #points with sin function apllied
+    #FuncPoints=SinF(Single) #points with sin function apllied
     data=mostFrequent(Single,1)
     datas=[np.mean(data),np.std(data),len(data),mostFrequent(Single,1)[-1]]
     print(datas)
