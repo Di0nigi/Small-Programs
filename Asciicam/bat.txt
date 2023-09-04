@@ -1,5 +1,4 @@
 @echo off
-D:
 cd "/folderpath"
 python ./AscIIcam.py
 pause

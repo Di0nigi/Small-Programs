@@ -5,7 +5,7 @@ import sys
 from curses import wrapper
 
 capt = cv2.VideoCapture(0)
-chars= ' .\'`^",:;Il!i><~+_-?][}{\\1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'
+chars= ' .\'`^",:;Il!i><~+_-?][}{\\1)(|\\/*#MW&8%B@$'
 scale =0.1
 
 def redraw(l):
